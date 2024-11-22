@@ -946,3 +946,13 @@ port_channel_interfaces:
   - name: Port-Channel132
     description: Test_port-channel_interface-profile
     profile: test-interface-profile
+
+  - name: Port-Channel133
+    description: Test_te_admin_groups
+    switchport:
+      enabled: false
+    ip_address: 100.64.127.2/31
+    traffic_engineering:
+      enabled: true
+      administrative_groups:
+        - 7

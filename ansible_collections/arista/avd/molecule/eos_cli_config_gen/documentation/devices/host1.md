@@ -4898,6 +4898,7 @@ interface Ethernet81/10
 | Port-Channel112 | LACP fallback individual | - | dhcp | default | - | - | - | - |
 | Port-Channel113 | interface_with_mpls_enabled | - | 172.31.128.9/31 | default | - | - | - | - |
 | Port-Channel114 | interface_with_mpls_disabled | - | 172.31.128.10/31 | default | - | - | - | - |
+| Port-Channel133 | Test_te_admin_groups | - | 100.64.127.2/31 | default | - | - | - | - |
 
 ##### IP NAT: Source Static
 
@@ -4940,6 +4941,12 @@ interface Ethernet81/10
 | Port-Channel51 | EVPN_UNDERLAY | - | - | - | - | - | shared-secret |
 | Port-Channel100 | EVPN_UNDERLAY | - | - | - | - | - | Level-1: md5<br>Level-2: text |
 | Port-Channel110 | ISIS_TEST | True | 99 | point-to-point | level-2 | True | - |
+
+#### Traffic Engineering
+
+| Interface | Administrative Groups |
+| --------- | --------------------- |
+| Port-Channel133 | 7 |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -5501,6 +5508,13 @@ interface Port-Channel131.10
 interface Port-Channel132
    profile test-interface-profile
    description Test_port-channel_interface-profile
+!
+interface Port-Channel133
+   description Test_te_admin_groups
+   no switchport
+   ip address 100.64.127.2/31
+   traffic-engineering
+   traffic-engineering administrative-group 7
 ```
 
 ### Loopback Interfaces
