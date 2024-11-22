@@ -549,7 +549,8 @@
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;range</samp>](## "ethernet_interfaces.[].switchport.port_security.vlans.[].range") | String | Required, Unique |  |  | VLAN ID or range(s) of VLAN IDs, <1-4094>.<br>Example:<br>  - 3<br>  - 1,3<br>  - 1-10<br> |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mac_address_maximum</samp>](## "ethernet_interfaces.[].switchport.port_security.vlans.[].mac_address_maximum") | Integer | Required |  |  |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;traffic_engineering</samp>](## "ethernet_interfaces.[].traffic_engineering") | Dictionary |  |  |  |  |
-    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;administrative_groups</samp>](## "ethernet_interfaces.[].traffic_engineering.administrative_groups") | List, items: String |  |  |  | List of administrative groups, valid values are names, ranges 0-127, or single integers 0-127. |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled</samp>](## "ethernet_interfaces.[].traffic_engineering.enabled") | Boolean |  |  |  | Whether to enable traffic-engineering on this interface. |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;administrative_groups</samp>](## "ethernet_interfaces.[].traffic_engineering.administrative_groups") | List, items: String |  |  |  | List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single integers 0-127. |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&lt;str&gt;</samp>](## "ethernet_interfaces.[].traffic_engineering.administrative_groups.[]") | String |  |  |  |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;eos_cli</samp>](## "ethernet_interfaces.[].eos_cli") | String |  |  |  | Multiline EOS CLI rendered directly on the ethernet interface in the final EOS configuration. |
 
@@ -1733,7 +1734,10 @@
                 mac_address_maximum: <int; required>
         traffic_engineering:
 
-          # List of administrative groups, valid values are names, ranges 0-127, or single integers 0-127.
+          # Whether to enable traffic-engineering on this interface.
+          enabled: <bool>
+
+          # List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single integers 0-127.
           administrative_groups:
             - <str>
 
