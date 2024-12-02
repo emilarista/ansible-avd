@@ -1853,3 +1853,16 @@ ethernet_interfaces:
         - 3
         - testgrp
         - 15-29
+
+  - name: Ethernet81/4
+    description: Traffic Engineering Interface
+    shutdown: false
+    switchport:
+      enabled: false
+    ip_address: 100.64.127.0/31
+    traffic_engineering:
+      enabled: false
+      administrative_groups:
+        - 4
+        - testgrp
+        - 7-100

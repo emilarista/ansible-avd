@@ -810,6 +810,12 @@ interface {{ port_channel_interface.name }}
    switchport backup dest-macaddr {{ port_channel_interface.switchport.backup.dest_macaddr }}
 {%         endif %}
 {%     endif %}
+{%     if port_channel_interface.traffic_engineering.enabled is arista.avd.defined(true) %}
+   traffic-engineering
+{%     endif %}
+{%     if port_channel_interface.traffic_engineering.administrative_groups is arista.avd.defined %}
+   traffic-engineering administrative-group {{ port_channel_interface.traffic_engineering.administrative_groups | join(",") }}
+{%     endif %}
 {%     for link_tracking_group in port_channel_interface.link_tracking_groups | arista.avd.natural_sort('name') %}
 {%         if link_tracking_group.name is arista.avd.defined and link_tracking_group.direction is arista.avd.defined %}
    link tracking group {{ link_tracking_group.name }} {{ link_tracking_group.direction }}
@@ -822,12 +828,6 @@ interface {{ port_channel_interface.name }}
 {%     endif %}
 {%     if port_channel_interface.vmtracer is arista.avd.defined(true) %}
    vmtracer vmware-esx
-{%     endif %}
-{%     if port_channel_interface.traffic_engineering.enabled is arista.avd.defined(true) %}
-   traffic-engineering
-{%         if port_channel_interface.traffic_engineering.administrative_groups is arista.avd.defined %}
-   traffic-engineering administrative-group {{ port_channel_interface.traffic_engineering.administrative_groups | join(",") }}
-{%         endif %}
 {%     endif %}
 {%     if port_channel_interface.eos_cli is arista.avd.defined %}
    {{ port_channel_interface.eos_cli | indent(3, false) }}
