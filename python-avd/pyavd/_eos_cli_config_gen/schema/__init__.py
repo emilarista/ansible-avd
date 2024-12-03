@@ -30577,7 +30577,75 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
             AdministrativeGroups._item_type = str
 
-            _fields: ClassVar[dict] = {"enabled": {"type": bool}, "administrative_groups": {"type": AdministrativeGroups}, "_custom_data": {"type": dict}}
+            class Bandwidth(AvdModel):
+                """Subclass of AvdModel."""
+
+                _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
+                number: int | None
+                unit: Literal["gbps", "mbps", "percent"] | None
+                _custom_data: dict[str, Any]
+
+                if TYPE_CHECKING:
+
+                    def __init__(
+                        self,
+                        *,
+                        number: int | None | UndefinedType = Undefined,
+                        unit: Literal["gbps", "mbps", "percent"] | None | UndefinedType = Undefined,
+                        _custom_data: dict[str, Any] | UndefinedType = Undefined,
+                    ) -> None:
+                        """
+                        Bandwidth.
+
+
+                        Subclass of AvdModel.
+
+                        Args:
+                            number: number
+                            unit: unit
+                            _custom_data: _custom_data
+
+                        """
+
+            class MinDelayStatic(AvdModel):
+                """Subclass of AvdModel."""
+
+                _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
+                number: int | None
+                unit: Literal["microseconds", "milliseconds"] | None
+                _custom_data: dict[str, Any]
+
+                if TYPE_CHECKING:
+
+                    def __init__(
+                        self,
+                        *,
+                        number: int | None | UndefinedType = Undefined,
+                        unit: Literal["microseconds", "milliseconds"] | None | UndefinedType = Undefined,
+                        _custom_data: dict[str, Any] | UndefinedType = Undefined,
+                    ) -> None:
+                        """
+                        MinDelayStatic.
+
+
+                        Subclass of AvdModel.
+
+                        Args:
+                            number: number
+                            unit: unit
+                            _custom_data: _custom_data
+
+                        """
+
+            _fields: ClassVar[dict] = {
+                "enabled": {"type": bool},
+                "administrative_groups": {"type": AdministrativeGroups},
+                "srlg": {"type": str},
+                "metric": {"type": int},
+                "bandwidth": {"type": Bandwidth},
+                "min_delay_static": {"type": MinDelayStatic},
+                "_custom_data": {"type": dict},
+            }
             enabled: bool | None
             """Whether to enable traffic-engineering on this interface."""
             administrative_groups: AdministrativeGroups
@@ -30587,6 +30655,17 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
             Subclass of AvdList with `str` items.
             """
+            srlg: str | None
+            """SRLG name or number"""
+            metric: int | None
+            bandwidth: Bandwidth
+            """
+            Interface maximum reservable bandwidth
+
+            Subclass of AvdModel.
+            """
+            min_delay_static: MinDelayStatic
+            """Subclass of AvdModel."""
             _custom_data: dict[str, Any]
 
             if TYPE_CHECKING:
@@ -30596,6 +30675,10 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     *,
                     enabled: bool | None | UndefinedType = Undefined,
                     administrative_groups: AdministrativeGroups | UndefinedType = Undefined,
+                    srlg: str | None | UndefinedType = Undefined,
+                    metric: int | None | UndefinedType = Undefined,
+                    bandwidth: Bandwidth | UndefinedType = Undefined,
+                    min_delay_static: MinDelayStatic | UndefinedType = Undefined,
                     _custom_data: dict[str, Any] | UndefinedType = Undefined,
                 ) -> None:
                     """
@@ -30611,6 +30694,13 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                            integers 0-127.
 
                            Subclass of AvdList with `str` items.
+                        srlg: SRLG name or number
+                        metric: metric
+                        bandwidth:
+                           Interface maximum reservable bandwidth
+
+                           Subclass of AvdModel.
+                        min_delay_static: Subclass of AvdModel.
                         _custom_data: _custom_data
 
                     """
