@@ -1840,3 +1840,15 @@ ethernet_interfaces:
     spanning_tree_portfast: edge
     lldp:
       ztp_vlan: 112
+
+  - name: Ethernet81/3
+    description: Traffic Engineering Interface
+    shutdown: false
+    switchport:
+      enabled: false
+    ip_address: 100.64.127.0/31
+    traffic_engineering:
+      administrative_groups:
+        - 3
+        - testgrp
+        - 15-29
