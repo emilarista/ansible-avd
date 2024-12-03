@@ -11458,10 +11458,14 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
             AdministrativeGroups._item_type = str
 
-            _fields: ClassVar[dict] = {"administrative_groups": {"type": AdministrativeGroups}, "_custom_data": {"type": dict}}
+            _fields: ClassVar[dict] = {"enabled": {"type": bool}, "administrative_groups": {"type": AdministrativeGroups}, "_custom_data": {"type": dict}}
+            enabled: bool | None
+            """Whether to enable traffic-engineering on this interface."""
             administrative_groups: AdministrativeGroups
             """
-            List of administrative groups, valid values are names, ranges 0-127, or single integers 0-127.
+            List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single
+            integers 0-127.
+
             Subclass of AvdList with `str` items.
             """
             _custom_data: dict[str, Any]
@@ -11469,7 +11473,11 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
             if TYPE_CHECKING:
 
                 def __init__(
-                    self, *, administrative_groups: AdministrativeGroups | UndefinedType = Undefined, _custom_data: dict[str, Any] | UndefinedType = Undefined
+                    self,
+                    *,
+                    enabled: bool | None | UndefinedType = Undefined,
+                    administrative_groups: AdministrativeGroups | UndefinedType = Undefined,
+                    _custom_data: dict[str, Any] | UndefinedType = Undefined,
                 ) -> None:
                     """
                     TrafficEngineering.
@@ -11478,8 +11486,11 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     Subclass of AvdModel.
 
                     Args:
+                        enabled: Whether to enable traffic-engineering on this interface.
                         administrative_groups:
-                           List of administrative groups, valid values are names, ranges 0-127, or single integers 0-127.
+                           List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single
+                           integers 0-127.
+
                            Subclass of AvdList with `str` items.
                         _custom_data: _custom_data
 
@@ -30468,6 +30479,52 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
                     """
 
+        class TrafficEngineering(AvdModel):
+            """Subclass of AvdModel."""
+
+            class AdministrativeGroups(AvdList[str]):
+                """Subclass of AvdList with `str` items."""
+
+            AdministrativeGroups._item_type = str
+
+            _fields: ClassVar[dict] = {"enabled": {"type": bool}, "administrative_groups": {"type": AdministrativeGroups}, "_custom_data": {"type": dict}}
+            enabled: bool | None
+            """Whether to enable traffic-engineering on this interface."""
+            administrative_groups: AdministrativeGroups
+            """
+            List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single
+            integers 0-127.
+
+            Subclass of AvdList with `str` items.
+            """
+            _custom_data: dict[str, Any]
+
+            if TYPE_CHECKING:
+
+                def __init__(
+                    self,
+                    *,
+                    enabled: bool | None | UndefinedType = Undefined,
+                    administrative_groups: AdministrativeGroups | UndefinedType = Undefined,
+                    _custom_data: dict[str, Any] | UndefinedType = Undefined,
+                ) -> None:
+                    """
+                    TrafficEngineering.
+
+
+                    Subclass of AvdModel.
+
+                    Args:
+                        enabled: Whether to enable traffic-engineering on this interface.
+                        administrative_groups:
+                           List of traffic-engineering administrative groups, valid values are names, ranges 0-127, or single
+                           integers 0-127.
+
+                           Subclass of AvdList with `str` items.
+                        _custom_data: _custom_data
+
+                    """
+
         _fields: ClassVar[dict] = {
             "name": {"type": str},
             "description": {"type": str},
@@ -30557,6 +30614,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
             "peer_type": {"type": str},
             "sflow": {"type": Sflow},
             "switchport": {"type": Switchport},
+            "traffic_engineering": {"type": TrafficEngineering},
             "validate_state": {"type": bool},
             "validate_lldp": {"type": bool},
             "eos_cli": {"type": str},
@@ -30737,6 +30795,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
         """Subclass of AvdModel."""
         switchport: Switchport
         """Subclass of AvdModel."""
+        traffic_engineering: TrafficEngineering
+        """Subclass of AvdModel."""
         validate_state: bool | None
         """
         Set to false to disable interface state and LLDP topology validation performed by the
@@ -30841,6 +30901,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 peer_type: str | None | UndefinedType = Undefined,
                 sflow: Sflow | UndefinedType = Undefined,
                 switchport: Switchport | UndefinedType = Undefined,
+                traffic_engineering: TrafficEngineering | UndefinedType = Undefined,
                 validate_state: bool | None | UndefinedType = Undefined,
                 validate_lldp: bool | None | UndefinedType = Undefined,
                 eos_cli: str | None | UndefinedType = Undefined,
@@ -30962,6 +31023,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     peer_type: Key only used for documentation or validation purposes.
                     sflow: Subclass of AvdModel.
                     switchport: Subclass of AvdModel.
+                    traffic_engineering: Subclass of AvdModel.
                     validate_state:
                        Set to false to disable interface state and LLDP topology validation performed by the
                        `eos_validate_state` role.
