@@ -4953,9 +4953,9 @@ interface Ethernet81/10
 
 #### Traffic Engineering
 
-| Interface | Administrative Groups |
-| --------- | --------------------- |
-| Port-Channel133 | 7 |
+| Interface | Enabled | Administrative Groups |
+| --------- | ------- | --------------------- |
+| Port-Channel133 | True | 7 |
 
 #### Port-Channel Interfaces Device Configuration
 
