@@ -68,6 +68,7 @@ interface Ethernet1
    mpls ldp igp sync
    mpls ldp interface
    mpls ip
+
 ```
 
 ### Loopback Interfaces

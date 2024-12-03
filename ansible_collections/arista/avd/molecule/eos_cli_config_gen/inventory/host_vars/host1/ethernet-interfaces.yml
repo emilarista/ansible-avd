@@ -1853,6 +1853,14 @@ ethernet_interfaces:
         - 3
         - testgrp
         - 15-29
+      srlg: TEST-SRLG
+      metric: 4
+      bandwidth:
+        number: 10
+        unit: percent
+      min_delay_static:
+        number: 5
+        unit: microseconds
 
   - name: Ethernet81/4
     description: Traffic Engineering Interface
@@ -1866,3 +1874,11 @@ ethernet_interfaces:
         - 4
         - testgrp
         - 7-100
+      srlg: 16
+      metric: 2
+      bandwidth:
+        number: 100
+        unit: mbps
+      min_delay_static:
+        number: 2
+        unit: milliseconds
