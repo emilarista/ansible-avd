@@ -3788,8 +3788,8 @@ interface Dps1
 
 | Interface | Enabled | Administrative Groups |
 | --------- | ------- | --------------------- |
-| Ethernet81/3 | True | 3,testgrp,15-29 |
-| Ethernet81/4 | False | 4,testgrp,7-100 |
+| Ethernet81/3 | True | 3,15-29,testgrp |
+| Ethernet81/4 | False | 4,7-100,testgrp |
 
 #### Ethernet Interfaces Device Configuration
 
@@ -4764,14 +4764,14 @@ interface Ethernet81/3
    no switchport
    ip address 100.64.127.0/31
    traffic-engineering
-   traffic-engineering administrative-group 3,testgrp,15-29
+   traffic-engineering administrative-group 3,15-29,testgrp
 !
 interface Ethernet81/4
    description Traffic Engineering Interface
    no shutdown
    no switchport
    ip address 100.64.127.0/31
-   traffic-engineering administrative-group 4,testgrp,7-100
+   traffic-engineering administrative-group 4,7-100,testgrp
 !
 interface Ethernet81/10
    description isis_port_channel_member
@@ -4917,6 +4917,7 @@ interface Ethernet81/10
 | Port-Channel113 | interface_with_mpls_enabled | - | 172.31.128.9/31 | default | - | - | - | - |
 | Port-Channel114 | interface_with_mpls_disabled | - | 172.31.128.10/31 | default | - | - | - | - |
 | Port-Channel133 | Test_te_admin_groups | - | 100.64.127.2/31 | default | - | - | - | - |
+| Port-Channel134 | Traffic Engineering Interface | - | 100.64.127.4/31 | default | - | - | - | - |
 
 ##### IP NAT: Source Static
 
@@ -5534,6 +5535,12 @@ interface Port-Channel133
    ip address 100.64.127.2/31
    traffic-engineering
    traffic-engineering administrative-group 7
+!
+interface Port-Channel134
+   description Traffic Engineering Interface
+   no switchport
+   ip address 100.64.127.4/31
+   traffic-engineering administrative-group 4,7-100,testgrp
 ```
 
 ### Loopback Interfaces
