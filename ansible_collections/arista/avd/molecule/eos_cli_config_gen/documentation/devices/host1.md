@@ -3789,9 +3789,9 @@ interface Dps1
 
 #### Traffic Engineering
 
-| Interface | Enabled | Administrative Groups |
-| --------- | ------- | --------------------- |
-| Ethernet81/3 | True | 3,15-29,testgrp |
+| Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Ethernet81/3 | True | 3,15-29,testgrp | 4 | 10 percent | 5 microseconds | TEST-SRLG |
 
 #### Ethernet Interfaces Device Configuration
 
@@ -3868,7 +3868,6 @@ interface Ethernet1
    switchport backup mac-move-burst-interval 30
    switchport backup initial-mac-move-delay 10
    switchport backup dest-macaddr 01:00:00:00:00:00
-
    link tracking group EVPN_MH_ES1 upstream
    link tracking group EVPN_MH_ES3 upstream
    link tracking group EVPN_MH_ES4 upstream
@@ -3902,7 +3901,6 @@ interface Ethernet2
    storm-control all level 10
    spanning-tree bpduguard disable
    spanning-tree bpdufilter disable
-
 !
 interface Ethernet3
    description P2P_LINK_TO_DC1-SPINE2_Ethernet2
@@ -3942,7 +3940,6 @@ interface Ethernet3
    !
    sync-e
       priority 10
-
    link tracking group EVPN_MH_ES2 downstream
 !
 interface Ethernet4
@@ -3967,7 +3964,6 @@ interface Ethernet4
    switchport port-security violation protect
    priority-flow-control on
    spanning-tree guard none
-
 !
 interface Ethernet5
    description Molecule Routing
@@ -3997,7 +3993,6 @@ interface Ethernet5
    spanning-tree guard loop
    !
    sync-e
-
 !
 interface Ethernet6
    description SRV-POD02_Eth1
@@ -4029,7 +4024,6 @@ interface Ethernet6
    !
    sync-e
       priority disabled
-
 !
 interface Ethernet7
    description Molecule L2
@@ -4055,7 +4049,6 @@ interface Ethernet7
    spanning-tree portfast
    spanning-tree bpduguard enable
    spanning-tree bpdufilter enable
-
    vmtracer vmware-esx
    transceiver media override 100gbase-ar4
 !
@@ -4070,7 +4063,6 @@ interface Ethernet8
       random-detect ecn count
    isis authentication mode md5 rx-disabled
    isis authentication key 0 <removed>
-
 !
 interface Ethernet8.101
    description to WAN-ISP-01 Ethernet2.101 - VRF-C1
@@ -4080,7 +4072,6 @@ interface Ethernet8.101
    ipv6 address 2002:ABDC::1/64
    isis authentication mode md5
    isis authentication key 0 <removed>
-
 !
 interface Ethernet9
    description interface_with_mpls_enabled
@@ -4093,7 +4084,6 @@ interface Ethernet9
    mpls ip
    isis authentication mode sha key-id 2 rx-disabled
    isis authentication key 0 <removed>
-
 !
 interface Ethernet10
    description interface_with_mpls_disabled
@@ -4103,7 +4093,6 @@ interface Ethernet10
    no mpls ip
    isis authentication mode sha key-id 2
    isis authentication key 0 <removed>
-
 !
 interface Ethernet11
    description interface_in_mode_access_accepting_tagged_LACP
@@ -4112,7 +4101,6 @@ interface Ethernet11
    switchport
    l2-protocol encapsulation dot1q vlan 200
    isis authentication mode shared-secret profile profile1 algorithm sha-1 rx-disabled
-
 !
 interface Ethernet12
    description interface_with_dot1q_tunnel
@@ -4120,7 +4108,6 @@ interface Ethernet12
    switchport mode dot1q-tunnel
    switchport
    isis authentication mode shared-secret profile profile1 algorithm sha-1
-
 !
 interface Ethernet13
    description interface_in_mode_access_with_voice
@@ -4137,7 +4124,6 @@ interface Ethernet13
    isis authentication key 0 <removed> level-2
    no logging event storm-control discards
    no logging event spanning-tree
-
 !
 interface Ethernet14
    description SRV-POD02_Eth1
@@ -4149,7 +4135,6 @@ interface Ethernet14
    isis authentication mode sha key-id 10 level-2
    isis authentication key 0 <removed> level-1
    isis authentication key 0 <removed> level-2
-
 !
 interface Ethernet15
    description PVLAN Promiscuous Access - only one secondary
@@ -4159,7 +4144,6 @@ interface Ethernet15
    switchport pvlan mapping 111
    isis authentication mode shared-secret profile profile1 algorithm sha-256 level-1
    isis authentication mode shared-secret profile profile2 algorithm sha-1 level-2
-
 !
 interface Ethernet16
    description PVLAN Promiscuous Trunk - vlan translation out
@@ -4170,7 +4154,6 @@ interface Ethernet16
    switchport vlan translation out 111-112 110
    isis authentication mode shared-secret profile profile1 algorithm sha-256 rx-disabled level-1
    isis authentication mode shared-secret profile profile2 algorithm sha-1 rx-disabled level-2
-
 !
 interface Ethernet17
    description PVLAN Secondary Trunk
@@ -4180,7 +4163,6 @@ interface Ethernet17
    switchport trunk private-vlan secondary
    isis authentication mode sha key-id 5 rx-disabled level-1
    isis authentication mode sha key-id 10 rx-disabled level-2
-
 !
 interface Ethernet18
    description PBR Description
@@ -4190,7 +4172,6 @@ interface Ethernet18
    service-policy type pbr input MyLANServicePolicy
    isis authentication mode sha key-id 5 level-1
    isis authentication mode sha key-id 10 level-2
-
 !
 interface Ethernet19
    description Switched port with no LLDP rx/tx
@@ -4206,7 +4187,6 @@ interface Ethernet19
    isis authentication key-id 4 algorithm sha-1 rfc-5310 key 0 <removed> level-1
    isis authentication key-id 1 algorithm sha-1 key 0 <removed> level-2
    isis authentication key-id 5 algorithm sha-1 rfc-5310 key 0 <removed> level-2
-
 !
 interface Ethernet20
    description Port patched through patch-panel to pseudowire
@@ -4216,7 +4196,6 @@ interface Ethernet20
    isis authentication mode shared-secret profile profile1 algorithm sha-256 level-1
    isis authentication mode md5 level-2
    isis authentication key 0 <removed> level-2
-
 !
 interface Ethernet21
    description 200MBit/s shape
@@ -4225,7 +4204,6 @@ interface Ethernet21
    shape rate 200000 kbps
    isis authentication mode md5 rx-disabled level-1
    isis authentication key 0 <removed> level-1
-
 !
 interface Ethernet22
    description 10% shape
@@ -4233,7 +4211,6 @@ interface Ethernet22
    shape rate 10 percent
    isis authentication mode sha key-id 100 level-2
    isis authentication key 0 <removed> level-2
-
 !
 interface Ethernet23
    description Error-correction encoding
@@ -4241,61 +4218,51 @@ interface Ethernet23
    error-correction encoding reed-solomon
    switchport
    isis authentication mode shared-secret profile profile2 algorithm sha-1 level-2
-
 !
 interface Ethernet24
    description Disable error-correction encoding
    no error-correction encoding
    switchport
-
 !
 interface Ethernet25
    description Molecule MAC
    switchport
    mac access-group MAC_ACL_IN in
    mac access-group MAC_ACL_OUT out
-
 !
 interface Ethernet26
    no switchport
-
 !
 interface Ethernet26.1
    description TENANT_A pseudowire 1 interface
    encapsulation vlan
       client unmatched
-
 !
 interface Ethernet26.100
    description TENANT_A pseudowire 1 interface
    vlan id 10
    encapsulation vlan
       client dot1q 100 network client
-
 !
 interface Ethernet26.200
    description TENANT_A pseudowire 2 interface
    encapsulation vlan
       client dot1q 200
-
 !
 interface Ethernet26.300
    description TENANT_A pseudowire 3 interface
    encapsulation vlan
       client dot1q 300 network dot1q 400
-
 !
 interface Ethernet26.400
    description TENANT_A pseudowire 3 interface
    encapsulation vlan
       client dot1q outer 400 inner 20 network dot1q outer 401 inner 21
-
 !
 interface Ethernet26.500
    description TENANT_A pseudowire 3 interface
    encapsulation vlan
       client dot1q outer 500 inner 50 network client
-
 !
 interface Ethernet27
    description EVPN-Vxlan single-active redundancy
@@ -4308,7 +4275,6 @@ interface Ethernet27
       designated-forwarder election hold-time 10
       designated-forwarder election candidate reachability required
       route-target import 00:00:01:02:03:04
-
 !
 interface Ethernet28
    description EVPN-MPLS multihoming
@@ -4319,75 +4285,63 @@ interface Ethernet28
       mpls tunnel flood filter time 100
       mpls shared index 100
       route-target import 00:00:01:02:03:05
-
 !
 interface Ethernet29
    description DOT1X Testing - auto phone true
    switchport
-
    dot1x port-control auto
    dot1x port-control force-authorized phone
 !
 interface Ethernet30
    description DOT1X Testing - force-authorized phone false
    switchport
-
    dot1x port-control force-authorized
    no dot1x port-control force-authorized phone
 !
 interface Ethernet31
    description DOT1X Testing - force-unauthorized - no phone
    switchport
-
    dot1x port-control force-unauthorized
 !
 interface Ethernet32
    description DOT1X Testing - auto reauthentication
    switchport
-
    dot1x reauthentication
    dot1x port-control auto
 !
 interface Ethernet33
    description DOT1X Testing - pae mode authenticator
    switchport
-
    dot1x pae authenticator
 !
 interface Ethernet34
    description DOT1X Testing - authentication_failure allow
    switchport
-
    dot1x authentication failure action traffic allow vlan 800
 !
 interface Ethernet35
    description DOT1X Testing - authentication_failure drop
    switchport
-
    dot1x authentication failure action traffic drop
 !
 interface Ethernet36
    description DOT1X Testing - host-mode single-host
    switchport
-
    dot1x host-mode single-host
 !
 interface Ethernet37
    description DOT1X Testing - host-mode multi-host
    switchport
-
    dot1x host-mode multi-host
 !
 interface Ethernet38
    description DOT1X Testing - host-mode multi-host authenticated
    switchport
-
    dot1x host-mode multi-host authenticated
 !
 interface Ethernet39
    description DOT1X Testing - mac_based_authentication host-mode common true
    switchport
-
    dot1x mac based authentication host-mode common
 !
 interface Ethernet40
@@ -4395,7 +4349,6 @@ interface Ethernet40
    switchport
    flow tracker hardware T2
    flow tracker sampled T2
-
    dot1x mac based authentication always
 !
 interface Ethernet41
@@ -4403,7 +4356,6 @@ interface Ethernet41
    switchport
    flow tracker hardware T3
    flow tracker sampled T3
-
    dot1x mac based authentication host-mode common
    dot1x mac based authentication always
 !
@@ -4411,13 +4363,11 @@ interface Ethernet42
    description DOT1X Testing - mac_based_authentication
    switchport
    flow tracker sampled T3
-
    dot1x mac based authentication
 !
 interface Ethernet43
    description DOT1X Testing - timeout values
    switchport
-
    dot1x timeout quiet-period 10
    dot1x timeout reauth-timeout-ignore always
    dot1x timeout tx-period 6
@@ -4427,14 +4377,12 @@ interface Ethernet43
 interface Ethernet44
    description DOT1X Testing - reauthorization_request_limit
    switchport
-
    dot1x eapol disabled
    dot1x reauthorization request limit 3
 !
 interface Ethernet45
    description DOT1X Testing - all features
    switchport
-
    dot1x pae authenticator
    dot1x authentication failure action traffic allow vlan 800
    dot1x reauthentication
@@ -4456,7 +4404,6 @@ interface Ethernet46
    switchport trunk native vlan tag
    switchport mode trunk
    switchport
-
 !
 interface Ethernet47
    description IP Helper
@@ -4466,46 +4413,39 @@ interface Ethernet47
    ip helper-address 10.10.96.101 source-interface Loopback0
    ip helper-address 10.10.96.150 vrf MGMT source-interface Loopback0
    ip helper-address 10.10.96.151 vrf MGMT
-
 !
 interface Ethernet48
    description Load Interval
    load-interval 5
    switchport
-
 !
 interface Ethernet50
    description SFlow Interface Testing - SFlow ingress enabled
    switchport
    sflow enable
-
 !
 interface Ethernet51
    description SFlow Interface Testing - SFlow egress enabled
    switchport
    sflow egress enable
-
 !
 interface Ethernet52
    description SFlow Interface Testing - SFlow ingress and egress unmodified enabled
    switchport
    sflow enable
    sflow egress unmodified enable
-
 !
 interface Ethernet53
    description SFlow Interface Testing - SFlow ingress and egress disabled
    switchport
    no sflow enable
    no sflow egress enable
-
 !
 interface Ethernet54
    description SFlow Interface Testing - SFlow ingress and egress unmodified disabled
    switchport
    no sflow enable
    no sflow egress unmodified enable
-
 !
 interface Ethernet55
    description DHCPv6 Relay Testing
@@ -4514,7 +4454,6 @@ interface Ethernet55
    ipv6 dhcp relay destination a0::2 link-address a0::3
    ipv6 dhcp relay destination a0::4 vrf TEST local-interface Loopback55 link-address a0::5
    ipv6 address a0::1/64
-
 !
 interface Ethernet56
    description Interface with poe commands and limit in class
@@ -4525,7 +4464,6 @@ interface Ethernet56
    poe shutdown action maintain
    poe limit 30.00 watts
    poe negotiation lldp disabled
-
 !
 interface Ethernet57
    description Interface with poe commands and limit in watts
@@ -4536,13 +4474,11 @@ interface Ethernet57
    poe shutdown action power-off
    poe limit 45.00 watts fixed
    poe legacy detect
-
 !
 interface Ethernet58
    description Interface with poe disabled and no other poe keys
    switchport
    poe disabled
-
 !
 interface Ethernet60
    description IP NAT Testing
@@ -4578,7 +4514,6 @@ interface Ethernet60
    ip nat destination dynamic access-list ACL4 pool POOL4 priority 1 comment Priority low end
    ip nat destination dynamic access-list ACL5 pool POOL5 priority 4294967295 comment Priority high end
    ip nat destination dynamic access-list ACL6 pool POOL6 comment Priority default
-
 !
 interface Ethernet61
    description interface_in_mode_access_with_voice
@@ -4591,7 +4526,6 @@ interface Ethernet61
    switchport
    no logging event storm-control discards
    no logging event spanning-tree
-
 !
 interface Ethernet62
    description interface_in_mode_access_with_voice
@@ -4604,14 +4538,12 @@ interface Ethernet62
    switchport
    no logging event storm-control discards
    no logging event spanning-tree
-
 !
 interface Ethernet63
    description DHCP client interface
    no switchport
    ip address dhcp
    dhcp client accept default-route
-
 !
 interface Ethernet64
    description DHCP server interface
@@ -4620,7 +4552,6 @@ interface Ethernet64
    ip address 192.168.42.42/24
    dhcp server ipv4
    dhcp server ipv6
-
 !
 interface Ethernet65
    description Multiple VRIDs
@@ -4631,7 +4562,6 @@ interface Ethernet65
    ipv6 enable
    ipv6 address 2001:db8::2/64
    ipv6 address fe80::2/64 link-local
-
    vrrp 1 priority-level 105
    vrrp 1 advertisement interval 2
    vrrp 1 preempt delay minimum 30 reload 800
@@ -4646,7 +4576,6 @@ interface Ethernet66
    ipv6 enable
    ipv6 address 2001:db8::2/64
    ipv6 address fe80::2/64 link-local
-
    vrrp 1 priority-level 105
    vrrp 1 advertisement interval 2
    vrrp 1 preempt delay minimum 30 reload 800
@@ -4666,19 +4595,16 @@ interface Ethernet67
    no shutdown
    switchport
    mac timestamp before-fcs
-
    transceiver frequency 190050.000
 !
 interface Ethernet67.1
    description Test_encapsulation_dot1q
    encapsulation dot1q vlan 4 inner 34
-
 !
 interface Ethernet68
    description Custom_Transceiver_Frequency
    no shutdown
    switchport
-
    transceiver media override 100gbase-ar4
    transceiver frequency 190080.000 ghz
 !
@@ -4686,72 +4612,60 @@ interface Ethernet68.1
    description Test_encapsulation_vlan1
    encapsulation vlan
       client dot1q outer 23 inner dot1q 45 network dot1ad outer 32 inner dot1ad 54
-
 !
 interface Ethernet68.2
    description Test_encapsulation_vlan2
    encapsulation vlan
       client dot1q 10 network dot1q outer 32 inner 54
-
 !
 interface Ethernet68.3
    description Test_encapsulation_vlan3
    encapsulation vlan
       client dot1ad 12 network dot1q 25
-
 !
 interface Ethernet68.4
    description Test_encapsulation_vlan4
    encapsulation vlan
       client dot1ad outer 35 inner dot1q 60 network dot1q outer 53 inner dot1ad 6
-
 !
 interface Ethernet68.5
    description Test_encapsulation_vlan5
    encapsulation vlan
       client dot1ad outer 35 inner 60 network dot1ad outer 52 inner 62
-
 !
 interface Ethernet68.6
    description Test_encapsulation_vlan6
    encapsulation vlan
       client dot1ad outer 35 inner 60 network client
-
 !
 interface Ethernet68.7
    description Test_encapsulation_vlan7
    encapsulation vlan
       client untagged network dot1ad outer 35 inner 60
-
 !
 interface Ethernet68.8
    description Test_encapsulation_vlan8
    encapsulation vlan
       client untagged network dot1q outer 35 inner 60
-
 !
 interface Ethernet68.9
    description Test_encapsulation_vlan9
    encapsulation vlan
       client untagged network untagged
-
 !
 interface Ethernet68.10
    description Test_encapsulation_vlan9
    encapsulation vlan
       client dot1q outer 14 inner 11 network client inner
-
 !
 interface Ethernet69
    description IP NAT service-profile
    switchport
    ip nat service-profile TEST-NAT-PROFILE
-
 !
 interface Ethernet70
    description dot1x_aaa_unresponsive
    no shutdown
-
    dot1x aaa unresponsive phone action apply cached-results timeout 10 hours else traffic allow
    dot1x aaa unresponsive action traffic allow vlan 10 access-list acl1
    dot1x aaa unresponsive eap response success
@@ -4760,7 +4674,6 @@ interface Ethernet70
 interface Ethernet71
    description dot1x_aaa_unresponsive1
    no shutdown
-
    dot1x aaa unresponsive phone action apply cached-results timeout 10 hours
    dot1x aaa unresponsive action traffic allow vlan 10 access-list acl1
    dot1x aaa unresponsive eap response success
@@ -4769,7 +4682,6 @@ interface Ethernet71
 interface Ethernet72
    description dot1x_aaa_unresponsive2
    no shutdown
-
    dot1x aaa unresponsive action traffic allow vlan 10 access-list acl1
    dot1x aaa unresponsive eap response success
    dot1x mac based access-list
@@ -4777,63 +4689,52 @@ interface Ethernet72
 interface Ethernet73
    description DC1-AGG01_Ethernet1
    channel-group 5 mode active
-
    transceiver media override 100gbase-ar4
 !
 interface Ethernet74
    description MLAG_PEER_DC1-LEAF1B_Ethernet3
    channel-group 3 mode active
-
 !
 interface Ethernet75
    description MLAG_PEER_DC1-LEAF1B_Ethernet4
    channel-group 3 mode active
-
 !
 interface Ethernet76
    description SRV-POD03_Eth1
    channel-group 5 mode active
    no lldp transmit
    no lldp receive
-
 !
 interface Ethernet77
    description MLAG_PEER_DC1-LEAF1B_Ethernet8
    channel-group 8 mode active
-
 !
 interface Ethernet78
    description DC1-AGG03_Ethernet1
    channel-group 15 mode active
    lacp timer fast
    lacp timer multiplier 30
-
 !
 interface Ethernet79
    description DC1-AGG04_Ethernet1
    channel-group 16 mode active
    lacp timer normal
-
 !
 interface Ethernet80
    description LAG Member
    channel-group 17 mode active
-
 !
 interface Ethernet80/1
    description LAG Member
    channel-group 101 mode active
-
 !
 interface Ethernet80/2
    description LAG Member
    channel-group 102 mode active
-
 !
 interface Ethernet80/3
    description LAG Member
    channel-group 103 mode active
-
 !
 interface Ethernet80/4
    description LAG Member LACP fallback
@@ -4842,19 +4743,16 @@ interface Ethernet80/4
    switchport
    channel-group 104 mode active
    spanning-tree portfast
-
 !
 interface Ethernet81
    description LAG Member
    channel-group 109 mode active
-
 !
 interface Ethernet81/1
    description LAG Member with error_correction
    error-correction encoding fire-code
    error-correction encoding reed-solomon
    channel-group 111 mode active
-
 !
 interface Ethernet81/2
    description LAG Member LACP fallback LLDP ZTP VLAN
@@ -4864,7 +4762,6 @@ interface Ethernet81/2
    channel-group 112 mode active
    lldp tlv transmit ztp vlan 112
    spanning-tree portfast
-
 !
 interface Ethernet81/3
    description Traffic Engineering Interface
@@ -4872,19 +4769,26 @@ interface Ethernet81/3
    no switchport
    ip address 100.64.127.0/31
    traffic-engineering
-   traffic-engineering administrative-group 3,testgrp,15-29
+   traffic-engineering bandwidth 10 percent
+   traffic-engineering administrative-group 3,15-29,testgrp
+   traffic-engineering srlg TEST-SRLG
+   traffic-engineering metric 4
+   traffic-engineering min-delay static 5 microseconds
 !
 interface Ethernet81/4
    description Traffic Engineering Interface
    no shutdown
    no switchport
    ip address 100.64.127.0/31
-   traffic-engineering administrative-group 4,testgrp,7-100
+   traffic-engineering bandwidth 100 mbps
+   traffic-engineering administrative-group 4,7-100,testgrp
+   traffic-engineering srlg 16
+   traffic-engineering metric 2
+   traffic-engineering min-delay static 2 milliseconds
 !
 interface Ethernet81/10
    description isis_port_channel_member
    channel-group 110 mode active
-
 ```
 
 ### Port-Channel Interfaces
@@ -5072,9 +4976,9 @@ interface Ethernet81/10
 
 #### Traffic Engineering
 
-| Interface | Enabled | Administrative Groups |
-| --------- | ------- | --------------------- |
-| Port-Channel133 | True | 7 |
+| Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Port-Channel133 | True | 7 | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
 

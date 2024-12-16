@@ -428,8 +428,16 @@
 {%             set te_enabled = po_te_interface.traffic_engineering.enabled | arista.avd.default (["false"]) %}
 {%             set te_srlg = po_te_interface.traffic_engineering.srlg | arista.avd.default("-") %}
 {%             set te_metric = po_te_interface.traffic_engineering.metric | arista.avd.default("-") %}
-{%             set te_bandwidth = po_te_interface.traffic_engineering.bandwidth.number ~ " " ~ po_te_interface.traffic_engineering.bandwidth.unit | arista.avd.default("-") %}
-{%             set te_min_del = po_te_interface.traffic_engineering.min_delay_static.number ~ " " ~ po_te_interface.traffic_engineering.min_delay_static.unit | arista.avd.default("-") %}
+{%             if po_te_interface.traffic_engineering.bandwidth is arista.avd.defined %}
+{%                 set te_bandwidth = po_te_interface.traffic_engineering.bandwidth.number ~ " " ~ po_te_interface.traffic_engineering.bandwidth.unit %}
+{%             else %}
+{%                 set te_bandwidth = "-" %}
+{%             endif %}
+{%             if po_te_interface.traffic_engineering.min_delay_static is arista.avd.defined %}
+{%                 set te_min_del = po_te_interface.traffic_engineering.min_delay_static.number ~ " " ~ po_te_interface.traffic_engineering.min_delay_static.unit %}
+{%             else %}
+{%                 set te_min_del = "-" %}
+{%             endif %}
 | {{ po_te_interface.name }} | {{ te_enabled }} | {{ admin_groups }} | {{ te_metric }} | {{ te_bandwidth }} | {{ te_min_del }} | {{ te_srlg }} |
 {%         endfor %}
 {%     endif %}
