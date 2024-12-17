@@ -3789,9 +3789,9 @@ interface Dps1
 
 #### Traffic Engineering
 
-| Interface | Enabled | Administrative Groups |
-| --------- | ------- | --------------------- |
-| Ethernet81/3 | True | 3,15-29,testgrp |
+| Interface | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Ethernet81/3 | 3,15-29,testgrp | 4 | 10 percent | 5 microseconds | TEST-SRLG |
 
 #### Ethernet Interfaces Device Configuration
 
@@ -4769,14 +4769,22 @@ interface Ethernet81/3
    no switchport
    ip address 100.64.127.0/31
    traffic-engineering
+   traffic-engineering bandwidth 10 percent
    traffic-engineering administrative-group 3,15-29,testgrp
+   traffic-engineering srlg TEST-SRLG
+   traffic-engineering metric 4
+   traffic-engineering min-delay static 5 microseconds
 !
 interface Ethernet81/4
    description Traffic Engineering Interface
    no shutdown
    no switchport
    ip address 100.64.127.0/31
+   traffic-engineering bandwidth 100 mbps
    traffic-engineering administrative-group 4,7-100,testgrp
+   traffic-engineering srlg 16
+   traffic-engineering metric 2
+   traffic-engineering min-delay static 2 milliseconds
 !
 interface Ethernet81/10
    description isis_port_channel_member
@@ -5011,9 +5019,9 @@ interface Ethernet84
 
 #### Traffic Engineering
 
-| Interface | Enabled | Administrative Groups |
-| --------- | ------- | --------------------- |
-| Port-Channel136 | True | 7 |
+| Interface | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Port-Channel136 | 7 | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -5629,7 +5637,11 @@ interface Port-Channel137
    description Traffic Engineering Interface
    no switchport
    ip address 100.64.127.4/31
+   traffic-engineering bandwidth 100 mbps
    traffic-engineering administrative-group 4,7-100,testgrp
+   traffic-engineering srlg 16
+   traffic-engineering metric 2
+   traffic-engineering min-delay static 2 milliseconds
 ```
 
 ### Loopback Interfaces
