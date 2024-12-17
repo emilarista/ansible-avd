@@ -957,6 +957,14 @@ port_channel_interfaces:
       enabled: true
       administrative_groups:
         - 7
+      srlg: 16
+      metric: 2
+      bandwidth:
+        number: 100
+        unit: mbps
+      min_delay_static:
+        number: 2
+        unit: milliseconds
 
   - name: Port-Channel134
     description: Traffic Engineering Interface

@@ -4978,7 +4978,7 @@ interface Ethernet81/10
 
 | Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
-| Port-Channel133 | True | 7 | - | - | - | - |
+| Port-Channel133 | True | 7 | 2 | 100 mbps | 2 milliseconds | 16 |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -5547,7 +5547,11 @@ interface Port-Channel133
    no switchport
    ip address 100.64.127.2/31
    traffic-engineering
+   traffic-engineering bandwidth 100 mbps
    traffic-engineering administrative-group 7
+   traffic-engineering srlg 16
+   traffic-engineering metric 2
+   traffic-engineering min-delay static 2 milliseconds
 !
 interface Port-Channel134
    description Traffic Engineering Interface
