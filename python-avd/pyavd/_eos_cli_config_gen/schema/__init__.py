@@ -12288,8 +12288,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 """Subclass of AvdModel."""
 
                 _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
-                number: int | None
-                unit: Literal["gbps", "mbps", "percent"] | None
+                number: int
+                unit: Literal["gbps", "mbps", "percent"]
                 _custom_data: dict[str, Any]
 
                 if TYPE_CHECKING:
@@ -12297,8 +12297,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     def __init__(
                         self,
                         *,
-                        number: int | None | UndefinedType = Undefined,
-                        unit: Literal["gbps", "mbps", "percent"] | None | UndefinedType = Undefined,
+                        number: int | UndefinedType = Undefined,
+                        unit: Literal["gbps", "mbps", "percent"] | UndefinedType = Undefined,
                         _custom_data: dict[str, Any] | UndefinedType = Undefined,
                     ) -> None:
                         """
@@ -12318,8 +12318,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 """Subclass of AvdModel."""
 
                 _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
-                number: int | None
-                unit: Literal["microseconds", "milliseconds"] | None
+                number: int
+                unit: Literal["microseconds", "milliseconds"]
                 _custom_data: dict[str, Any]
 
                 if TYPE_CHECKING:
@@ -12327,8 +12327,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     def __init__(
                         self,
                         *,
-                        number: int | None | UndefinedType = Undefined,
-                        unit: Literal["microseconds", "milliseconds"] | None | UndefinedType = Undefined,
+                        number: int | UndefinedType = Undefined,
+                        unit: Literal["microseconds", "milliseconds"] | UndefinedType = Undefined,
                         _custom_data: dict[str, Any] | UndefinedType = Undefined,
                     ) -> None:
                         """
@@ -32913,8 +32913,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 """Subclass of AvdModel."""
 
                 _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
-                number: int | None
-                unit: Literal["gbps", "mbps", "percent"] | None
+                number: int
+                unit: Literal["gbps", "mbps", "percent"]
                 _custom_data: dict[str, Any]
 
                 if TYPE_CHECKING:
@@ -32922,8 +32922,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     def __init__(
                         self,
                         *,
-                        number: int | None | UndefinedType = Undefined,
-                        unit: Literal["gbps", "mbps", "percent"] | None | UndefinedType = Undefined,
+                        number: int | UndefinedType = Undefined,
+                        unit: Literal["gbps", "mbps", "percent"] | UndefinedType = Undefined,
                         _custom_data: dict[str, Any] | UndefinedType = Undefined,
                     ) -> None:
                         """
@@ -32943,8 +32943,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 """Subclass of AvdModel."""
 
                 _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
-                number: int | None
-                unit: Literal["microseconds", "milliseconds"] | None
+                number: int
+                unit: Literal["microseconds", "milliseconds"]
                 _custom_data: dict[str, Any]
 
                 if TYPE_CHECKING:
@@ -32952,8 +32952,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     def __init__(
                         self,
                         *,
-                        number: int | None | UndefinedType = Undefined,
-                        unit: Literal["microseconds", "milliseconds"] | None | UndefinedType = Undefined,
+                        number: int | UndefinedType = Undefined,
+                        unit: Literal["microseconds", "milliseconds"] | UndefinedType = Undefined,
                         _custom_data: dict[str, Any] | UndefinedType = Undefined,
                     ) -> None:
                         """
