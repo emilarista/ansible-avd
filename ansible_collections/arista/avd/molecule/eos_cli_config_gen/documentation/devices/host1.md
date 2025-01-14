@@ -3821,9 +3821,9 @@ interface Dps1
 
 #### Traffic Engineering
 
-| Interface | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
-| --------- | --------------------- | ------ | ------------------------ | --------- | ---- |
-| Ethernet81/3 | 3,15-29,testgrp | 4 | 10 percent | 5 microseconds | TEST-SRLG |
+| Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Ethernet81/3 | True | 3,15-29,testgrp | 4 | 10 percent | 5 microseconds | TEST-SRLG |
 
 #### Ethernet Interfaces Device Configuration
 
@@ -5064,9 +5064,9 @@ interface Ethernet84
 
 #### Traffic Engineering
 
-| Interface | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
-| --------- | --------------------- | ------ | ------------------------ | --------- | ---- |
-| Port-Channel136 | 7 | - | - | - | - |
+| Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
+| --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
+| Port-Channel136 | - | 7 | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
 
