@@ -2217,7 +2217,7 @@ keys:
                 convert_types:
                   - int
             srlg:
-              description: SRLG name or number
+              description: SRLG name or number.
               type: str
               convert_types:
                 - int
@@ -2229,7 +2229,7 @@ keys:
               max: 16777215
             bandwidth:
               type: dict
-              description: Interface maximum reservable bandwidth
+              description: Interface maximum reservable bandwidth.
               keys:
                 number:
                   type: int
