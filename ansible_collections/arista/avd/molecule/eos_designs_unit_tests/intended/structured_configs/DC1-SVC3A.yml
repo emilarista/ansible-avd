@@ -542,6 +542,7 @@ management_interfaces:
   gateway: 192.168.200.5
 metadata:
   platform: 7050SX3
+  fabric_name: EOS_DESIGNS_UNIT_TESTS
 mlag_configuration:
   domain_id: custom_mlag_domain_id
   local_interface: Vlan4092
@@ -1100,7 +1101,6 @@ router_bgp:
       - address_family: evpn
         route_targets:
         - '12:12'
-    router_id: 192.168.255.12
     updates:
       wait_install: true
     neighbors:
@@ -1121,7 +1121,7 @@ router_bgp:
       - address_family: evpn
         route_targets:
         - '13:13'
-    router_id: 192.168.255.12
+    router_id: 11.11.11.11
     updates:
       wait_install: true
     neighbors:

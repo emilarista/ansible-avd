@@ -175,6 +175,8 @@ management_interfaces:
   gateway: 192.168.200.5
 metadata:
   platform: VEOS
+  rack: rackA
+  fabric_name: EOS_DESIGNS_UNIT_TESTS
 ntp:
   local_interface:
     name: Management1
@@ -337,7 +339,6 @@ router_bgp:
       - address_family: evpn
         route_targets:
         - '1234:12'
-    router_id: 192.168.42.42
     redistribute:
       connected:
         enabled: true
@@ -393,7 +394,7 @@ router_ospf:
   - id: 9
     vrf: Tenant_A_OP_Zone
     passive_interface_default: true
-    router_id: 192.168.42.42
+    router_id: 10.10.10.10
     no_passive_interfaces:
     - Vlan113
     redistribute:

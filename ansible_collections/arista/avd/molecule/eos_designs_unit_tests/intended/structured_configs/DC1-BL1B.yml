@@ -234,6 +234,7 @@ management_interfaces:
   gateway: 192.168.200.5
 metadata:
   platform: 7280R
+  fabric_name: EOS_DESIGNS_UNIT_TESTS
 ntp: null
 platform:
   sand:
@@ -594,7 +595,6 @@ router_ospf:
   - id: 14
     vrf: Tenant_A_WAN_Zone
     passive_interface_default: true
-    router_id: 192.168.255.15
     no_passive_interfaces:
     - Vlan150
     max_lsa: 15000
