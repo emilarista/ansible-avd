@@ -12363,11 +12363,11 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
             Subclass of AvdList with `str` items.
             """
             srlg: str | None
-            """SRLG name or number"""
+            """SRLG name or number."""
             metric: int | None
             bandwidth: Bandwidth
             """
-            Interface maximum reservable bandwidth
+            Interface maximum reservable bandwidth.
 
             Subclass of AvdModel.
             """
@@ -12401,10 +12401,10 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                            integers 0-127.
 
                            Subclass of AvdList with `str` items.
-                        srlg: SRLG name or number
+                        srlg: SRLG name or number.
                         metric: metric
                         bandwidth:
-                           Interface maximum reservable bandwidth
+                           Interface maximum reservable bandwidth.
 
                            Subclass of AvdModel.
                         min_delay_static: Subclass of AvdModel.
@@ -32993,11 +32993,11 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
             Subclass of AvdList with `str` items.
             """
             srlg: str | None
-            """SRLG name or number"""
+            """SRLG name or number."""
             metric: int | None
             bandwidth: Bandwidth
             """
-            Interface maximum reservable bandwidth
+            Interface maximum reservable bandwidth.
 
             Subclass of AvdModel.
             """
@@ -33031,10 +33031,10 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                            integers 0-127.
 
                            Subclass of AvdList with `str` items.
-                        srlg: SRLG name or number
+                        srlg: SRLG name or number.
                         metric: metric
                         bandwidth:
-                           Interface maximum reservable bandwidth
+                           Interface maximum reservable bandwidth.
 
                            Subclass of AvdModel.
                         min_delay_static: Subclass of AvdModel.
