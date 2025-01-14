@@ -5066,7 +5066,7 @@ interface Ethernet84
 
 | Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
-| Port-Channel136 | - | 7 | - | - | - | - |
+| Port-Channel136 | True | 7 | - | - | - | - |
 
 #### Port-Channel Interfaces Device Configuration
 
