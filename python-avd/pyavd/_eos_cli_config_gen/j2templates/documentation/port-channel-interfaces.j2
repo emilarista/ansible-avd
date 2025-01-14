@@ -425,7 +425,7 @@
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
 {%         for po_te_interface in port_channel_te_interfaces %}
 {%             set admin_groups = po_te_interface.traffic_engineering.administrative_groups | arista.avd.default (["-"]) | join(",") %}
-{%             set te_enabled = po_te_interface.enabled | arista.avd.default("-") %}
+{%             set te_enabled = po_te_interface.traffic_engineering.enabled | arista.avd.default("-") %}
 {%             set te_srlg = po_te_interface.traffic_engineering.srlg | arista.avd.default("-") %}
 {%             set te_metric = po_te_interface.traffic_engineering.metric | arista.avd.default("-") %}
 {%             if po_te_interface.traffic_engineering.bandwidth is arista.avd.defined %}

@@ -809,7 +809,7 @@
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
 {%         for te_interface in te_interfaces %}
 {%             set admin_groups = te_interface.traffic_engineering.administrative_groups | arista.avd.default (["-"]) | join(",") %}
-{%             set te_enabled = te_interface.enabled | arista.avd.default("-") %}
+{%             set te_enabled = te_interface.traffic_engineering.enabled | arista.avd.default("-") %}
 {%             set te_srlg = te_interface.traffic_engineering.srlg | arista.avd.default("-") %}
 {%             set te_metric = te_interface.traffic_engineering.metric | arista.avd.default("-") %}
 {%             if te_interface.traffic_engineering.bandwidth is arista.avd.defined %}
