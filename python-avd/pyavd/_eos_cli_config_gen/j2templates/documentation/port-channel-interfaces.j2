@@ -438,7 +438,7 @@
 {%             else %}
 {%                 set te_min_del = "-" %}
 {%             endif %}
-| {{ po_te_interface.name }} | {{ enabled }} | {{ admin_groups }} | {{ te_metric }} | {{ te_bandwidth }} | {{ te_min_del }} | {{ te_srlg }} |
+| {{ po_te_interface.name }} | {{ te_enabled }} | {{ admin_groups }} | {{ te_metric }} | {{ te_bandwidth }} | {{ te_min_del }} | {{ te_srlg }} |
 {%         endfor %}
 {%     endif %}
 
