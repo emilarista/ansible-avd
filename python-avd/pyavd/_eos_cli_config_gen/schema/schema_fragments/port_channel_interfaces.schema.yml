@@ -1415,12 +1415,14 @@ keys:
               keys:
                 number:
                   type: int
+                  required: true
                   convert_types:
                     - str
                   min: 0
                   max: 10000
                 unit:
                   type: str
+                  required: true
                   valid_values:
                     - gbps
                     - mbps
@@ -1430,12 +1432,14 @@ keys:
               keys:
                 number:
                   type: int
+                  required: true
                   convert_types:
                     - str
                   min: 1
                   max: 16777215
                 unit:
                   type: str
+                  required: true
                   valid_values:
                     - microseconds
                     - milliseconds
