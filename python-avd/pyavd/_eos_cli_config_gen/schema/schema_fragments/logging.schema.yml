@@ -105,7 +105,7 @@ keys:
                         - str
                   ssl_profile:
                     type: str
-                    description: Used when host protocol is tls. Profiles are defined under management_security.ssl_profiles.
+                    description: Used when host protocol is 'tls'. Profiles are defined under `management_security.ssl_profiles`.
       policy:
         type: dict
         keys:
