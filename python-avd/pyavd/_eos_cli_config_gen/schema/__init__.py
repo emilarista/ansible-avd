@@ -18744,7 +18744,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 ports: Ports
                 """Subclass of AvdList with `int` items."""
                 ssl_profile: str | None
-                """Used when host protocol is tls. Profiles are defined under management_security.ssl_profiles."""
+                """Used when host protocol is 'tls'. Profiles are defined under `management_security.ssl_profiles`."""
                 _custom_data: dict[str, Any]
 
                 if TYPE_CHECKING:
@@ -18768,7 +18768,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                             name: Syslog server name.
                             protocol: protocol
                             ports: Subclass of AvdList with `int` items.
-                            ssl_profile: Used when host protocol is tls. Profiles are defined under management_security.ssl_profiles.
+                            ssl_profile: Used when host protocol is 'tls'. Profiles are defined under `management_security.ssl_profiles`.
                             _custom_data: _custom_data
 
                         """
