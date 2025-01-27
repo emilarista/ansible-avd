@@ -1452,6 +1452,25 @@ keys:
                   valid_values:
                     - microseconds
                     - milliseconds
+            min_delay_dynamic:
+              type: dict
+              keys:
+                twamp_light_fallback:
+                  type: dict
+                  keys:
+                    number:
+                      type: int
+                      required: true
+                      convert_types:
+                        - str
+                      min: 1
+                      max: 16777215
+                    unit:
+                      type: str
+                      required: true
+                      valid_values:
+                        - microseconds
+                        - milliseconds
         validate_state:
           type: bool
           description: Set to false to disable interface state and LLDP topology validation performed by the `eos_validate_state` role.

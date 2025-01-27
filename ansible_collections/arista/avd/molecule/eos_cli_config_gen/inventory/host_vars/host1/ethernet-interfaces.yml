@@ -1907,9 +1907,10 @@ ethernet_interfaces:
       bandwidth:
         number: 100
         unit: mbps
-      min_delay_static:
-        number: 2
-        unit: milliseconds
+      min_delay_dynamic:
+        twamp_light_fallback:
+          number: 2
+          unit: milliseconds
 
   - name: Ethernet82
     description: Switchport_tap_tool

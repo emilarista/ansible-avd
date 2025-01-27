@@ -4944,7 +4944,7 @@ interface Ethernet81/4
    traffic-engineering administrative-group 4,7-100,testgrp
    traffic-engineering srlg 16
    traffic-engineering metric 2
-   traffic-engineering min-delay static 2 milliseconds
+   traffic-engineering min-delay dynamic twamp-light fallback 2 milliseconds
 !
 interface Ethernet81/10
    description isis_port_channel_member
@@ -5187,7 +5187,7 @@ interface Ethernet84
 
 | Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
-| Port-Channel136 | True | 7 | - | - | - | - |
+| Port-Channel136 | True | 7 | - | - | twamp-light, fallback 123 microseconds | - |
 
 #### Port-Channel Interfaces Device Configuration
 
@@ -5807,6 +5807,7 @@ interface Port-Channel136
    ip address 100.64.127.2/31
    traffic-engineering
    traffic-engineering administrative-group 7
+   traffic-engineering min-delay dynamic twamp-light fallback 123 microseconds
 !
 interface Port-Channel137
    description Traffic Engineering Interface

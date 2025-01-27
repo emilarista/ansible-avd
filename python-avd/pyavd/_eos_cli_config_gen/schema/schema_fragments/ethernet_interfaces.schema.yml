@@ -2264,6 +2264,25 @@ keys:
                   valid_values:
                     - microseconds
                     - milliseconds
+            min_delay_dynamic:
+              type: dict
+              keys:
+                twamp_light_fallback:
+                  type: dict
+                  keys:
+                    number:
+                      type: int
+                      required: true
+                      convert_types:
+                        - str
+                      min: 1
+                      max: 16777215
+                    unit:
+                      type: str
+                      required: true
+                      valid_values:
+                        - microseconds
+                        - milliseconds
         eos_cli:
           type: str
           description: Multiline EOS CLI rendered directly on the ethernet interface in the final EOS configuration.
