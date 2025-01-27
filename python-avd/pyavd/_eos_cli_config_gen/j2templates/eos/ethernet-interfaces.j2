@@ -1,5 +1,5 @@
 {#
- Copyright (c) 2023-2024 Arista Networks, Inc.
+ Copyright (c) 2023-2025 Arista Networks, Inc.
  Use of this source code is governed by the Apache License 2.0
  that can be found in the LICENSE file.
 #}
@@ -1007,6 +1007,8 @@ interface {{ ethernet_interface.name }}
 {%     endif %}
 {%     if ethernet_interface.traffic_engineering.min_delay_static is arista.avd.defined %}
    traffic-engineering min-delay static {{ ethernet_interface.traffic_engineering.min_delay_static.number }} {{ ethernet_interface.traffic_engineering.min_delay_static.unit }}
+{%     elif ethernet_interface.traffic_engineering.min_delay_dynamic.twamp_light_fallback is arista.avd.defined %}
+   traffic-engineering min-delay dynamic twamp-light fallback {{ ethernet_interface.traffic_engineering.min_delay_dynamic.twamp_light_fallback.number }} {{ ethernet_interface.traffic_engineering.min_delay_dynamic.twamp_light_fallback.unit }}
 {%     endif %}
 {%     for link_tracking_group in ethernet_interface.link_tracking_groups | arista.avd.natural_sort %}
 {%         if link_tracking_group.name is arista.avd.defined and link_tracking_group.direction is arista.avd.defined %}

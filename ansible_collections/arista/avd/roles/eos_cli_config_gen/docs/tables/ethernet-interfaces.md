@@ -560,6 +560,10 @@
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_delay_static</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_static") | Dictionary |  |  |  |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_static.number") | Integer |  |  | Min: 1<br>Max: 16777215 |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_static.unit") | String |  |  | Valid Values:<br>- <code>microseconds</code><br>- <code>milliseconds</code> |  |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_delay_dynamic</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic") | Dictionary |  |  |  |  |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twamp_light_fallback</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback") | Dictionary |  |  |  |  |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback.number") | Integer | Required |  | Min: 1<br>Max: 16777215 |  |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback.unit") | String | Required |  | Valid Values:<br>- <code>microseconds</code><br>- <code>milliseconds</code> |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;eos_cli</samp>](## "ethernet_interfaces.[].eos_cli") | String |  |  |  | Multiline EOS CLI rendered directly on the ethernet interface in the final EOS configuration. |
 
 === "YAML"
@@ -1760,6 +1764,10 @@
           min_delay_static:
             number: <int; 1-16777215>
             unit: <str; "microseconds" | "milliseconds">
+          min_delay_dynamic:
+            twamp_light_fallback:
+              number: <int; 1-16777215; required>
+              unit: <str; "microseconds" | "milliseconds"; required>
 
         # Multiline EOS CLI rendered directly on the ethernet interface in the final EOS configuration.
         eos_cli: <str>
