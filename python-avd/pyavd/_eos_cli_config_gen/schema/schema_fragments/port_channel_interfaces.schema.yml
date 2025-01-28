@@ -1438,6 +1438,7 @@ keys:
                     - percent
             min_delay_static:
               type: dict
+              description: Mutually exclusive with min_delay_dynamic, if both are defined min_delay_static takes precedence.
               keys:
                 number:
                   type: int
@@ -1453,6 +1454,7 @@ keys:
                     - microseconds
                     - milliseconds
             min_delay_dynamic:
+              description: Mutually exclusive with min_delay_static, if both are defined min_delay_static takes precedence.
               type: dict
               keys:
                 twamp_light_fallback:

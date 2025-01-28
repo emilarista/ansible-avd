@@ -3934,6 +3934,7 @@ interface Dps1
 | Interface | Enabled | Administrative Groups | Metric | Max Reservable Bandwidth | Min-delay | SRLG |
 | --------- | ------- | --------------------- | ------ | ------------------------ | --------- | ---- |
 | Ethernet81/3 | True | 3,15-29,testgrp | 4 | 10 percent | 5 microseconds | TEST-SRLG |
+| Ethernet81/4 | True | 4,7-100,testgrp | 2 | 100 mbps | twamp-light, fallback 2 milliseconds | 16 |
 
 #### Ethernet Interfaces Device Configuration
 
@@ -4940,6 +4941,7 @@ interface Ethernet81/4
    no shutdown
    no switchport
    ip address 100.64.127.0/31
+   traffic-engineering
    traffic-engineering bandwidth 100 mbps
    traffic-engineering administrative-group 4,7-100,testgrp
    traffic-engineering srlg 16
