@@ -7117,6 +7117,9 @@ router traffic-engineering
             explicit-null ipv6
             segment-list label-stack 900002 900008 900009 900006
             segment-list label-stack 900002 900010 900011 900012
+   !
+   twamp-light sender profile test-profile
+   !
    flex-algo
       flex-algo 128 test-algo
          priority 127

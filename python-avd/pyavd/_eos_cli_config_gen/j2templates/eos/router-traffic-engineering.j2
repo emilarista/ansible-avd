@@ -55,7 +55,12 @@ router traffic-engineering
 {%             endfor %}
 {%         endif %}
 {%     endif %}
+{%     if router_traffic_engineering.twamp_light_sender_profile is arista.avd.defined %}
+   !
+   twamp-light sender profile {{ router_traffic_engineering.twamp_light_sender_profile }}
+{%     endif %}
 {%     if router_traffic_engineering.flex_algos is arista.avd.defined %}
+   !
    flex-algo
 {%         for flex_algo in router_traffic_engineering.flex_algos %}
 {%             set flex_algo_cli = "flex-algo " ~ flex_algo.number %}

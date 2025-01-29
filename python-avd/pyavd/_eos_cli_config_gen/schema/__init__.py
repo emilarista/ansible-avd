@@ -4,9 +4,9 @@
 
 from __future__ import annotations
 from typing import Literal
-from typing import Any
 from pyavd._schema.models.eos_cli_config_gen_root_model import EosCliConfigGenRootModel
 from typing import ClassVar
+from typing import Any
 from typing import TYPE_CHECKING
 
 from pyavd._schema.models.avd_indexed_list import AvdIndexedList
@@ -49072,19 +49072,21 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
         FlexAlgos._item_type = FlexAlgosItem
 
-        _fields: ClassVar[dict] = {"enabled": {"type": bool}, "router_id": {"type": RouterId}, "segment_routing": {"type": SegmentRouting}, "flex_algos": {"type": FlexAlgos}, "_custom_data": {"type": dict}}
+        _fields: ClassVar[dict] = {"enabled": {"type": bool}, "router_id": {"type": RouterId}, "segment_routing": {"type": SegmentRouting}, "twamp_light_sender_profile": {"type": str}, "flex_algos": {"type": FlexAlgos}, "_custom_data": {"type": dict}}
         enabled: bool
         router_id: RouterId
         """Subclass of AvdModel."""
         segment_routing: SegmentRouting
         """Subclass of AvdModel."""
+        twamp_light_sender_profile: str | None
+        """Apply a twamp-light sender profile, defined under monitor_twamp_light.sender_profiles."""
         flex_algos: FlexAlgos
         """Subclass of AvdList with `FlexAlgosItem` items."""
         _custom_data: dict[str, Any]
 
 
         if TYPE_CHECKING:
-            def __init__(self, *, enabled: bool | UndefinedType = Undefined, router_id: RouterId | UndefinedType = Undefined, segment_routing: SegmentRouting | UndefinedType = Undefined, flex_algos: FlexAlgos | UndefinedType = Undefined, _custom_data: dict[str, Any] | UndefinedType = Undefined) -> None:
+            def __init__(self, *, enabled: bool | UndefinedType = Undefined, router_id: RouterId | UndefinedType = Undefined, segment_routing: SegmentRouting | UndefinedType = Undefined, twamp_light_sender_profile: str | None | UndefinedType = Undefined, flex_algos: FlexAlgos | UndefinedType = Undefined, _custom_data: dict[str, Any] | UndefinedType = Undefined) -> None:
                 """
                 RouterTrafficEngineering.
 
@@ -49095,6 +49097,7 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     enabled: enabled
                     router_id: Subclass of AvdModel.
                     segment_routing: Subclass of AvdModel.
+                    twamp_light_sender_profile: Apply a twamp-light sender profile, defined under monitor_twamp_light.sender_profiles.
                     flex_algos: Subclass of AvdList with `FlexAlgosItem` items.
                     _custom_data: _custom_data
 
