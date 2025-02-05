@@ -4493,11 +4493,11 @@ keys:
               keys:
                 number:
                   type: int
+                  description: Valid values are 1-16777215 microseconds. This is regardless
+                    of whether the specified unit is milliseconds or microseconds.
                   required: true
                   convert_types:
                   - str
-                  min: 1
-                  max: 16777215
                 unit:
                   type: str
                   required: true
@@ -4514,11 +4514,12 @@ keys:
                   keys:
                     number:
                       type: int
+                      description: Valid values are 1-16777215 microseconds. This
+                        is regardless of whether the specified unit is milliseconds
+                        or microseconds.
                       required: true
                       convert_types:
                       - str
-                      min: 1
-                      max: 16777215
                     unit:
                       type: str
                       required: true
@@ -11496,11 +11497,11 @@ keys:
               keys:
                 number:
                   type: int
+                  description: Valid values are 1-16777215 microseconds. This is regardless
+                    of whether the specified unit is milliseconds or microseconds.
                   required: true
                   convert_types:
                   - str
-                  min: 1
-                  max: 16777215
                 unit:
                   type: str
                   required: true
@@ -11517,11 +11518,12 @@ keys:
                   keys:
                     number:
                       type: int
+                      description: Valid values are 1-16777215 microseconds. This
+                        is regardless of whether the specified unit is milliseconds
+                        or microseconds.
                       required: true
                       convert_types:
                       - str
-                      min: 1
-                      max: 16777215
                     unit:
                       type: str
                       required: true
