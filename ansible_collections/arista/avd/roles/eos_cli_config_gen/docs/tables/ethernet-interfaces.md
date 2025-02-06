@@ -618,7 +618,7 @@
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_static.unit") | String | Required |  | Valid Values:<br>- <code>microseconds</code><br>- <code>milliseconds</code> |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_delay_dynamic</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic") | Dictionary |  |  |  | Mutually exclusive with min_delay_static, if both are defined min_delay_static takes precedence. |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;twamp_light_fallback</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback") | Dictionary |  |  |  |  |
-    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback.number") | Integer | Required |  |  | Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is milliseconds or microseconds. |
+    | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback.number") | Integer | Required |  |  | Valid values are 1-16777215 microseconds.<br>This is regardless of whether the specified unit is milliseconds or microseconds. |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</samp>](## "ethernet_interfaces.[].traffic_engineering.min_delay_dynamic.twamp_light_fallback.unit") | String | Required |  | Valid Values:<br>- <code>microseconds</code><br>- <code>milliseconds</code> |  |
     | [<samp>&nbsp;&nbsp;&nbsp;&nbsp;eos_cli</samp>](## "ethernet_interfaces.[].eos_cli") | String |  |  |  | Multiline EOS CLI rendered directly on the ethernet interface in the final EOS configuration. |
 
@@ -1982,7 +1982,8 @@
           min_delay_dynamic:
             twamp_light_fallback:
 
-              # Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is milliseconds or microseconds.
+              # Valid values are 1-16777215 microseconds.
+              # This is regardless of whether the specified unit is milliseconds or microseconds.
               number: <int; required>
               unit: <str; "microseconds" | "milliseconds"; required>
 

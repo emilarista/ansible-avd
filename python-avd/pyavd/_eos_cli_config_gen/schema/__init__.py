@@ -12412,7 +12412,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
                     number: int
                     """
-                    Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                    Valid values are 1-16777215 microseconds.
+                    This is regardless of whether the specified unit is
                     milliseconds or microseconds.
                     """
                     unit: Literal["microseconds", "milliseconds"]
@@ -12435,7 +12436,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
                             Args:
                                 number:
-                                   Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                                   Valid values are 1-16777215 microseconds.
+                                   This is regardless of whether the specified unit is
                                    milliseconds or microseconds.
                                 unit: unit
                                 _custom_data: _custom_data
@@ -33207,7 +33209,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                 _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
                 number: int
                 """
-                Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                Valid values are 1-16777215 microseconds.
+                This is regardless of whether the specified unit is
                 milliseconds or microseconds.
                 """
                 unit: Literal["microseconds", "milliseconds"]
@@ -33230,7 +33233,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
                         Args:
                             number:
-                               Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                               Valid values are 1-16777215 microseconds.
+                               This is regardless of whether the specified unit is
                                milliseconds or microseconds.
                             unit: unit
                             _custom_data: _custom_data
@@ -33246,7 +33250,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
                     _fields: ClassVar[dict] = {"number": {"type": int}, "unit": {"type": str}, "_custom_data": {"type": dict}}
                     number: int
                     """
-                    Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                    Valid values are 1-16777215 microseconds.
+                    This is regardless of whether the specified unit is
                     milliseconds or microseconds.
                     """
                     unit: Literal["microseconds", "milliseconds"]
@@ -33269,7 +33274,8 @@ class EosCliConfigGen(EosCliConfigGenRootModel):
 
                             Args:
                                 number:
-                                   Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is
+                                   Valid values are 1-16777215 microseconds.
+                                   This is regardless of whether the specified unit is
                                    milliseconds or microseconds.
                                 unit: unit
                                 _custom_data: _custom_data
