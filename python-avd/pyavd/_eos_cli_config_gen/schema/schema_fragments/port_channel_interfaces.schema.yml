@@ -1446,7 +1446,9 @@ keys:
               keys:
                 number:
                   type: int
-                  description: Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is milliseconds or microseconds.
+                  description: |-
+                    Valid values are 1-16777215 microseconds.
+                    This is regardless of whether the specified unit is milliseconds or microseconds.
                   required: true
                   convert_types:
                     - str
@@ -1465,7 +1467,9 @@ keys:
                   keys:
                     number:
                       type: int
-                      description: Valid values are 1-16777215 microseconds. This is regardless of whether the specified unit is milliseconds or microseconds.
+                      description: |-
+                        Valid values are 1-16777215 microseconds.
+                        This is regardless of whether the specified unit is milliseconds or microseconds.
                       required: true
                       convert_types:
                         - str
